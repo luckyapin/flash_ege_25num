@@ -3,7 +3,7 @@ def count(n):
     dl = 0
     while d*d < n:
         if n % d == 0:
-            if d % 2 != 0:
+            if d % 2 != 0:  # проверки на то, чтобы делитель был нечетным
                 dl += 1
             if (n//d) % 2 != 0:
                 dl += 1
@@ -16,5 +16,6 @@ def count(n):
 
 for i in range(23094748, 23094848+1):
     cnt = count(i)
+    # int(str(i)[::-1]) - обратнее число,
     if cnt == count(int(str(i)[::-1])) and cnt != 1:
         print(i, cnt)
