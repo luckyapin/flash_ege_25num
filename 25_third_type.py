@@ -13,7 +13,6 @@ def div_counter(n):
     return dl
 
 
-# 34887832
 numbers = '0123456789'
 
 for len in range(4):
