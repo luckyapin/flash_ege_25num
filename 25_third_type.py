@@ -22,4 +22,4 @@ for len in range(4):
             ast = ''.join(asteric)
             num = int('3'+ast+'8'+question)
             if int(num**0.5) == num**0.5 and div_counter(num) == 9:
-                print(num, num**0.5)
+                print(num, int(num**0.5))
