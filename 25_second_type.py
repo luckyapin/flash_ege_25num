@@ -13,9 +13,13 @@ for len1 in range(2):
                 for asteric2 in product(numbers, repeat=len2):
                     for question in numbers:
                         ast2 = ''.join(asteric2)
-                        num2 = int('1234'+ast2+'5'+question+'6')
+                        num2 = int('687'+ast2+'6'+question+'54')
+
                         final = num1+num2
-                        if final % 351 == 0:
+                        if final % 4876 == 0:
                             if final not in arr:
                                 arr.append(final)
-                                print(final, final//351)
+
+arr.sort()
+for i in arr:
+    print(i, i//4876)
