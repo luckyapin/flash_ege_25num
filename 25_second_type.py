@@ -1,21 +1,21 @@
-def count(n):
-    d = 2
-    dl = 0
-    while d*d < n:
-        if n % d == 0:
-            if d % 2 != 0:  # проверки на то, чтобы делитель был нечетным
-                dl += 1
-            if (n//d) % 2 != 0:
-                dl += 1
-                d += 1
-    if d*d == n:
-        if d % 2 != 0:
-            dl += 1
-    return dl
+from itertools import product
 
+numbers = '0123456789'
+arr = []  # массив в котором будут уникальные суммы
 
-for i in range(23094748, 23094848+1):
-    cnt = count(i)
-    # int(str(i)[::-1]) - обратнее число,
-    if cnt == count(int(str(i)[::-1])) and cnt != 1:
-        print(i, cnt)
+for len1 in range(2):
+    for asteric1 in product(numbers, repeat=len1):
+        for question in numbers:
+            ast1 = ''.join(asteric1)
+            num1 = int('1234'+ast1+'5'+question+'6')
+
+            for len2 in range(2):
+                for asteric2 in product(numbers, repeat=len2):
+                    for question in numbers:
+                        ast2 = ''.join(asteric2)
+                        num2 = int('1234'+ast2+'5'+question+'6')
+                        final = num1+num2
+                        if final % 351 == 0:
+                            if final not in arr:
+                                arr.append(final)
+                                print(final, final//351)
